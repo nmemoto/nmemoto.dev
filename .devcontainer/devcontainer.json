@@ -1,0 +1,24 @@
+{
+    "name": "nmemoto.dev",
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "lts"
+        },
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "astro-build.astro-vscode",
+                "ms-playwright.playwright",
+                "GitHub.vscode-pull-request-github",
+                "GitHub.copilot",
+                "GitHub.copilot-labs",
+                "GitHub.copilot-chat",
+                "github.vscode-github-actions"
+            ]
+        }
+    },
+    "postCreateCommand": "cd home && npx playwright install-deps"
+}
