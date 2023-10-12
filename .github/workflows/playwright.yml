@@ -1,9 +1,12 @@
-name: Playwright Tests
+name: "Home: Playwright Tests"
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+defaults:
+  run:
+    working-directory: home
 jobs:
   test:
     timeout-minutes: 60
