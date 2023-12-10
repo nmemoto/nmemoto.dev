@@ -17,5 +17,6 @@ test('各種リンクが表示されていること', async ({ page }) => {
   await expect(list[1]).toHaveText('X(Twitter)');
   await expect(list[2]).toHaveText('bluesky');
   await expect(list[3]).toHaveText('Zenn');
-  await expect(list[4]).toHaveText('Speaker Deck');
+  await expect(list[4]).toHaveText('しずかなインターネット');
+  await expect(list[5]).toHaveText('Speaker Deck');
 });
