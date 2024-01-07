@@ -1,0 +1,30 @@
+name: Deploy Worker
+on:
+  push:
+    branches:
+      - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run tests
+        run: echo "Running tests..."
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - name: Playground Install
+        run: npm install
+        working-directory: ./playground  
+      - name: Playground Build
+        run: npm run build
+        working-directory: ./playground
+      - name: Playground Deploy
+        uses: cloudflare/wrangler-action@v3.4.0
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          workingDirectory: "playground"
+          command: wrangler pages deploy ./dist
