@@ -8,6 +8,14 @@ updates:
 - package-ecosystem: "npm"
   directory: "/home"
   schedule:
-    interval: "daily"
+    interval: "weekly"
+    day: "monday"
+    time: "03:00"
+    timezone: "Asia/Tokyo"
+- package-ecosystem: "npm"
+  directory: "/playground"
+  schedule:
+    interval: "weekly"
+    day: "monday"
     time: "03:00"
     timezone: "Asia/Tokyo"
