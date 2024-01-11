@@ -1,0 +1,10 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { ReactPage } from "./ReactPage";
+---
+
+<Layout>
+    <main style="height: 100%;">
+        <ReactPage client:load />
+    </main>
+</Layout>
