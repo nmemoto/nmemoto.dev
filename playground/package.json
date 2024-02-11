@@ -23,6 +23,6 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "wrangler": "^3.26.0"
+    "wrangler": "^3.28.1"
   }
 }
